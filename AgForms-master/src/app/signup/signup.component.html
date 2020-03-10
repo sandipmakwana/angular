@@ -1,0 +1,99 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <form [formGroup]="Signup" (ngSubmit)="onSubmit()">
+                <div>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                        <div class="alert alert-danger"
+                            *ngIf="!Signup.get('firstName').valid && Signup.get('firstName').touched" role="alert">
+                            <span *ngIf="Signup.get('firstName').errors.minlength">name is invalid</span>
+                            <span *ngIf="Signup.get('firstName').errors['required']">field is required</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                        <div class="alert alert-danger"
+                            *ngIf="!Signup.get('lastName').valid && Signup.get('lastName').touched" role="alert">
+                            <span *ngIf="Signup.get('lastName').errors.minlength">name is invalid</span>
+                            <span *ngIf="Signup.get('lastName').errors['required']">field is required</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" formControlName="email">
+                        <div class="alert alert-danger"
+                            *ngIf="!Signup.get('email').valid && Signup.get('email').touched" role="alert">
+                            <span *ngIf="Signup.get('email').errors.email">email is invalid</span>
+                            <span *ngIf="Signup.get('email').errors['required']">email is required</span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" formControlName="password" name="password"
+                            id="password">
+                        <div class="alert alert-danger"
+                            *ngIf="!Signup.get('password').valid && Signup.get('password').touched" role="alert">
+
+                            <span *ngIf="Signup.get('password').errors.minlength"> minlength</span>
+                            <!-- <span
+                                *ngIf="!Signup.get('password').errors.minlength && Signup.get('password').errors.pattern">Special
+                                character is required</span> -->
+                            <span *ngIf="Signup.get('password').errors['required']">field is required</span>
+
+                        </div>
+
+                    </div>
+                    <!-- <div class="radio" *ngFor="let gender of gender">
+                        <label>
+                            <input type="radio" [value]="gender" formControlName="gender">{{gender}}
+                        </label>
+                    </div> -->
+                    <label for="radio">Gender:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                            value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Female
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                            value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Male
+                        </label>
+                    </div>
+                    <!-- <label>Which cars are you Interested?</label>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Audi</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="checkbox" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Ford</label>
+                    </div> -->
+                    <br>
+                    <label for="checkbox">Which cars are you Interested?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Ford
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Audi
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
