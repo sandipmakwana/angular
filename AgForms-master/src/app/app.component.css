@@ -4,9 +4,14 @@
 } */
 
 .navbar{
-   background-color: #e3f2fd
+   background-color: #35444e
 }
 
 .navbar-brand{
-    color:blue
+    color:white;
+    font-weight: 700;
+}
+.navbar-brand:hover{
+    color:rgb(245, 144, 11);
+    font-weight: 700;
 }

@@ -1,6 +1,5 @@
-.btn-outline-primary{
-    color: red;
-
+.btn-primary{
+ background-color:rgb(245, 144, 11);border-color:rgb(245, 144, 11);
 }
 .login-box {
     margin-left: auto;
